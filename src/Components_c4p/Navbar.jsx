@@ -112,7 +112,7 @@ const Navbar = () => {
           {/* Mobile Menu Links */}
           <div className="mt-10 flex flex-col items-center space-y-6 text-2xl">
             <Link to="/" className="hover:text-green-400" onClick={toggleMenu}>Home</Link>
-            <a className="hover:text-green-400 cursor-pointer">About Us</a>
+            <Link to="/aboutus" className="hover:text-green-400 cursor-pointer">About Us</Link>
             <div className="text-center">
               <button onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)} className="hover:text-green-400">
                 Our Initiatives {mobileDropdownOpen ? '▲' : '▼'}
@@ -126,7 +126,7 @@ const Navbar = () => {
                 </ul>
               )}
             </div>
-            <a className="hover:text-green-400 cursor-pointer">Upcoming Events</a>
+            <Link to="/moreProject" className="hover:text-green-400 cursor-pointer">Upcoming Events</Link>
            <Link to="/joinUs" className="hover:text-green-400" onClick={toggleMenu}>Join Us</Link>
             <Link to="/contact" className="hover:text-green-400" onClick={toggleMenu}>Contact Us</Link>
           </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const RecentProjects = () => {
   const [projects, setProjects] = useState([]);
@@ -26,12 +27,12 @@ const RecentProjects = () => {
           <p className="text-[#f59e0b] font-semibold mb-1">Complete Projects</p>
           <h2 className="text-4xl font-bold text-black">Our Recent Project</h2>
         </div>
-        <a
-          href="/moreProject"
+        <Link
+          to="/moreProject"
           className="bg-[#0d6157] hover:bg-[#084c45] text-white px-6 py-2 rounded-full font-medium text-sm transition"
         >
           View All Project →
-        </a>
+        </Link>
       </div>
 
       {/* Projects Grid */}
