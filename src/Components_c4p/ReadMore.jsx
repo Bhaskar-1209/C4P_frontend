@@ -13,7 +13,7 @@ const ProjectDetails = () => {
 
     const fetchProject = async () => {
       try {
-        const res = await axios.get(`http://localhost:5050/api/projects/${id}`);
+        const res = await axios.get(`https://c4p-backend.onrender.com/api/projects/${id}`);
         setProject(res.data);
       } catch (error) {
         console.error("Error fetching project details", error);
@@ -37,7 +37,7 @@ const ProjectDetails = () => {
         <div
           className="absolute inset-0 w-full h-full bg-cover bg-center opacity-50"
           style={{
-            backgroundImage: `url(http://localhost:5050/${project.images[0]})`,
+            backgroundImage: `url(https://c4p-backend.onrender.com/${project.images[0]})`,
           }}
         ></div>
         <div className="relative z-10 text-center px-4">
@@ -72,7 +72,7 @@ const ProjectDetails = () => {
       <section className="flex flex-col md:grid md:grid-cols-2">
         <div data-aos="fade-right" className="relative w-full h-64 md:h-96">
           <img
-            src={`http://localhost:5050/${project.images[1] || project.images[0]}`}
+            src={`https://c4p-backend.onrender.com/${project.images[1] || project.images[0]}`}
             alt="Project Visual"
             className="w-full h-full object-cover"
           />

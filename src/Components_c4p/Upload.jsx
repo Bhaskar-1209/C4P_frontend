@@ -36,7 +36,7 @@ const UploadProject = () => {
 
     try {
       setUploading(true);
-      const res = await axios.post('http://localhost:5050/api/projects/upload', data);
+      const res = await axios.post('https://c4p-backend.onrender.com/api/projects/upload', data);
       setMessage('Project uploaded successfully!');
       setFormData({ title: '', description: '', googleFormLink: '' });
       setImages([]);

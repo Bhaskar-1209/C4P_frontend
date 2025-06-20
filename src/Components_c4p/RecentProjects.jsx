@@ -7,7 +7,7 @@ const RecentProjects = () => {
   useEffect(() => {
     const fetchLatestProjects = async () => {
       try {
-        const res = await axios.get("http://localhost:5050/api/projects");
+        const res = await axios.get("https://c4p-backend.onrender.com/api/projects");
         const latestThree = res.data.slice(0, 3);
         setProjects(latestThree);
       } catch (err) {
@@ -43,7 +43,7 @@ const RecentProjects = () => {
           >
             {/* Image */}
             <img
-              src={`http://localhost:5050/${project.images[0]}`}
+              src={`https://c4p-backend.onrender.com/${project.images[0]}`}
               alt={project.title}
               className="w-full h-[350px] object-cover transition-all duration-500 md:group-hover:grayscale"
             />
