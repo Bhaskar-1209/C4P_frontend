@@ -4,7 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import axios from "axios";
 
-const ProjectDetails = () => {
+const ReadMore = () => {
   const { id } = useParams();
   const [project, setProject] = useState(null);
 
@@ -40,35 +40,37 @@ const ProjectDetails = () => {
             backgroundImage: `url(https://c4p-backend.onrender.com/${project.images[0]})`,
           }}
         ></div>
-        <div className="relative z-10 text-center px-4">
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight break-words">
             {project.title}
           </h1>
         </div>
       </section>
 
       {/* Description Section */}
-      <section data-aos="fade-up" className="py-16 px-6 md:px-20 bg-white">
-        <h2 className="text-2xl md:text-3xl font-bold text-[#94ae81] uppercase mb-6 text-center">
-          Project Impact
-        </h2>
-        <p className="text-sm md:text-base leading-relaxed mb-4 text-gray-700 text-justify">
-          {project.description}
-        </p>
-        <p className="text-sm md:text-base leading-relaxed text-gray-700 text-justify">
-          Learn more or participate by filling out{" "}
-          <a
-            href={project.googleFormLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[#94ae81] underline font-semibold"
-          >
-            this form
-          </a>.
-        </p>
-      </section>
+      {/* Description Section */}
+<section data-aos="fade-up" className="py-16 w-full bg-white px-6 md:px-20">
+  <h2 className="text-2xl md:text-3xl font-bold text-[#94ae81] uppercase mb-6 text-left">
+    Project Impact
+  </h2>
+  <p className="text-sm md:text-base leading-relaxed mb-4 text-gray-700 text-justify break-words">
+    {project.description}
+  </p>
+  <p className="text-sm md:text-base leading-relaxed text-gray-700 text-justify">
+    Learn more or participate by filling out{" "}
+    <a
+      href={project.googleFormLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-[#94ae81] underline font-semibold"
+    >
+      this form
+    </a>.
+  </p>
+</section>
 
-      {/* Additional Image or Statistics Section */}
+
+      {/* Contributors Section */}
       <section className="flex flex-col md:grid md:grid-cols-2">
         <div data-aos="fade-right" className="relative w-full h-64 md:h-96">
           <img
@@ -78,23 +80,29 @@ const ProjectDetails = () => {
           />
           <div className="absolute inset-0 bg-[#94ae81] opacity-30 mix-blend-multiply"></div>
         </div>
+
         <div data-aos="fade-left" className="p-6 md:p-10">
-          <h2 className="text-2xl font-bold text-[#94ae81] uppercase mb-4">Key Contributions</h2>
-          <ul className="space-y-4 text-[#333] text-base md:text-lg list-inside">
-            <li className="relative pl-6 before:absolute before:left-0 before:top-2.5 before:w-3 before:h-3 before:bg-[#94ae81] before:rounded-full">
-              Served over 500 families.
-            </li>
-            <li className="relative pl-6 before:absolute before:left-0 before:top-2.5 before:w-3 before:h-3 before:bg-[#94ae81] before:rounded-full">
-              Distributed educational kits to 200 children.
-            </li>
-            <li className="relative pl-6 before:absolute before:left-0 before:top-2.5 before:w-3 before:h-3 before:bg-[#94ae81] before:rounded-full">
-              Partnered with 10+ local organizations.
-            </li>
-          </ul>
+          <div className="max-w-2xl">
+            <h2 className="text-2xl font-bold text-[#94ae81] uppercase mb-4">Key Contributions</h2>
+            {project.contributors && project.contributors.length > 0 ? (
+              <ul className="space-y-4 text-[#333] text-base md:text-lg list-inside break-words">
+                {project.contributors.map((item, index) => (
+                  <li
+                    key={index}
+                    className="relative pl-6 before:absolute before:left-0 before:top-2.5 before:w-3 before:h-3 before:bg-[#94ae81] before:rounded-full"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-gray-500 italic">No contributors listed.</p>
+            )}
+          </div>
         </div>
       </section>
     </div>
   );
 };
 
-export default ProjectDetails;
+export default ReadMore;

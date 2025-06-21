@@ -40,21 +40,19 @@ const RecentProjects = () => {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="relative overflow-hidden rounded-2xl group shadow-lg"
+            className="relative group overflow-hidden rounded-2xl shadow-lg"
           >
             {/* Image */}
             <img
               src={`https://c4p-backend.onrender.com/${project.images[0]}`}
               alt={project.title}
-              className="w-full h-[350px] object-cover transition-all duration-500 md:group-hover:grayscale"
+              className="w-full h-[350px] object-cover transition-all duration-500"
             />
 
-            {/* Overlay */}
-            <div className="absolute bottom-0 left-0 w-full h-24 md:h-0 md:group-hover:h-20 overflow-hidden transition-all duration-500 ease-in-out">
-              <div className="w-full h-full md:transform md:-translate-x-full md:group-hover:translate-x-0 transition-transform duration-500 ease-in-out bg-[#94ae81] flex flex-col justify-center px-6">
-                <h3 className="text-white font-bold text-lg">{project.title}</h3>
-                <p className="text-white text-sm">{project.description}</p>
-              </div>
+            {/* Left-to-Right Hover Overlay */}
+            <div className="absolute top-0 left-0 w-full h-full bg-[#94ae81] text-white p-6 transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out flex flex-col justify-center">
+              <h3 className="text-lg font-bold mb-2">{project.title}</h3>
+              <p className="text-sm line-clamp-2">{project.description}</p>
             </div>
           </div>
         ))}

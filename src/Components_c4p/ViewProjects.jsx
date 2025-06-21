@@ -24,7 +24,9 @@ const ViewProjects = () => {
       {/* Heading */}
       <div className="text-center mb-12 mt-12">
         <h2 className="text-5xl font-bold text-[#3a5f50]">Explore Our Projects</h2>
-        <p className="text-[#6c757d] mt-4 text-2xl">Discover how we're making an impact, one initiative at a time.</p>
+        <p className="text-[#6c757d] mt-4 text-2xl">
+          Discover how we're making an impact, one initiative at a time.
+        </p>
       </div>
 
       {/* Project Grid */}
@@ -38,19 +40,17 @@ const ViewProjects = () => {
             <img
               src={`https://c4p-backend.onrender.com/${project.images[0]}`}
               alt={project.title}
-              className="w-full h-[350px] object-cover transition-all duration-500 md:group-hover:grayscale"
+              className="w-full h-[350px] object-cover transition-all duration-500"
             />
 
-            {/* Overlay */}
-            <div className="absolute bottom-0 left-0 w-full h-24 md:h-0 md:group-hover:h-24 overflow-hidden transition-all duration-500 ease-in-out">
-              <div className="w-full h-full md:transform md:-translate-x-full md:group-hover:translate-x-0 transition-transform duration-500 ease-in-out bg-[#94ae81] px-6 flex flex-col justify-center">
-                <h3 className="text-white font-bold text-lg">{project.title}</h3>
-                <p className="text-white text-sm">{project.description}</p>
-              </div>
+            {/* Left-to-Right Hover Overlay */}
+            <div className="absolute top-0 left-0 w-full h-full bg-[#94ae81] text-white p-6 transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out flex flex-col justify-center">
+              <h3 className="text-lg font-bold mb-2">{project.title}</h3>
+              <p className="text-sm line-clamp-2">{project.description}</p>
             </div>
 
-            {/* Button */}
-            <div className="absolute top-0 right-0 m-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-300">
+            {/* Hover Button */}
+            <div className="absolute top-0 right-0 m-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
               <button
                 onClick={() => navigate(`/projects/${project._id}`)}
                 className="bg-white text-[#94ae81] border border-[#94ae81] text-sm px-4 py-1 rounded-full hover:bg-[#94ae81] hover:text-white transition"
