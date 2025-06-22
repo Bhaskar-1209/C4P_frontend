@@ -66,7 +66,9 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <ul className="hidden lg:flex space-x-8 text-white text-lg items-center">
-          <li><Link to="/login" className="hover:text-green-400 login">Login</Link></li>
+          <li style={{ display: "none" }}>
+  <Link to="/login">Login</Link>
+</li>
           <li><Link to="/" className="hover:text-green-400">Home</Link></li>
           <li><Link to="/aboutus" className="hover:text-green-400">About Us</Link></li>
           <li className="relative" ref={desktopDropdownRef}>
