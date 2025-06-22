@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaYoutube, FaLinkedinIn, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 import logo_1 from '../assets/logos/1.png'
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -68,10 +69,7 @@ const Footer = () => {
               <li>↗ Food Support</li>
               <li>↗ Health Support</li>
               <li>↗ Our Campaign</li>
-              <li>
-  <Link to="/login">Login</Link>
-</li>
-
+              <li><Link to="/login" className="hover:text-green-400">Login</Link></li>
             </ul>
           </div>
 
