@@ -49,10 +49,28 @@ const RecentProjects = () => {
               className="w-full h-[350px] object-cover transition-all duration-500"
             />
 
-            {/* Left-to-Right Hover Overlay */}
-            <div className="absolute top-0 left-0 w-full h-full bg-[#94ae81] text-white p-6 transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out flex flex-col justify-center">
+            {/* Desktop Hover Overlay */}
+            <div className="absolute top-0 left-0 w-full h-full bg-[#94ae81] text-white p-6 transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out flex-col justify-center hidden md:flex">
               <h3 className="text-lg font-bold mb-2">{project.title}</h3>
               <p className="text-sm line-clamp-2">{project.description}</p>
+              <Link
+                to={`/project/${project._id}`}
+                className="mt-4 inline-block bg-white text-[#0d6157] font-semibold text-sm px-4 py-2 rounded-full hover:bg-[#f2f2f2] transition"
+              >
+                Read More
+              </Link>
+            </div>
+
+            {/* Mobile Static Description */}
+            <div className="md:hidden bg-white p-4">
+              <h3 className="text-lg font-bold text-gray-900">{project.title}</h3>
+              <p className="text-sm text-gray-700 mt-1 line-clamp-2">{project.description}</p>
+              <Link
+                to={`/project/${project._id}`}
+                className="mt-3 inline-block bg-[#0d6157] text-white text-sm px-4 py-2 rounded-full hover:bg-[#084c45] transition"
+              >
+                Read More
+              </Link>
             </div>
           </div>
         ))}
