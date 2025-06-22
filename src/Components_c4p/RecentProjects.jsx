@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const RecentProjects = () => {
   const [projects, setProjects] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchLatestProjects = async () => {
@@ -53,12 +55,12 @@ const RecentProjects = () => {
             <div className="absolute top-0 left-0 w-full h-full bg-[#94ae81] text-white p-6 transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out flex-col justify-center hidden md:flex">
               <h3 className="text-lg font-bold mb-2">{project.title}</h3>
               <p className="text-sm line-clamp-2">{project.description}</p>
-              <Link
-                to={`/project/${project._id}`}
-                className="mt-4 inline-block bg-white text-[#0d6157] font-semibold text-sm px-4 py-2 rounded-full hover:bg-[#f2f2f2] transition"
+               <button
+                onClick={() => navigate(`/projects/${project._id}`)}
+                className="mt-4 bg-white text-[#94ae81] font-semibold text-sm px-4 py-2 rounded-full hover:bg-[#7b9966] hover:text-white transition"
               >
-                Read More
-              </Link>
+                Read More →
+              </button>
             </div>
 
             {/* Mobile Static Description */}
