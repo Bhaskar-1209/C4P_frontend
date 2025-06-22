@@ -43,17 +43,25 @@ const ViewProjects = () => {
               className="w-full h-[350px] object-cover transition-all duration-500"
             />
 
-            {/* Left-to-Right Hover Overlay */}
-            <div className="absolute top-0 left-0 w-full h-full bg-[#94ae81] text-white p-6 transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out flex flex-col justify-center">
+            {/* Desktop Hover Overlay */}
+            <div className="absolute top-0 left-0 w-full h-full bg-[#94ae81] text-white p-6 transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out flex-col justify-center hidden md:flex">
               <h3 className="text-lg font-bold mb-2">{project.title}</h3>
               <p className="text-sm line-clamp-2">{project.description}</p>
-            </div>
-
-            {/* Hover Button */}
-            <div className="absolute top-0 right-0 m-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
               <button
                 onClick={() => navigate(`/projects/${project._id}`)}
-                className="bg-white text-[#94ae81] border border-[#94ae81] text-sm px-4 py-1 rounded-full hover:bg-[#94ae81] hover:text-white transition"
+                className="mt-4 bg-white text-[#94ae81] font-semibold text-sm px-4 py-2 rounded-full hover:bg-[#7b9966] hover:text-white transition"
+              >
+                Read More →
+              </button>
+            </div>
+
+            {/* Mobile Static Content */}
+            <div className="md:hidden bg-white p-4">
+              <h3 className="text-lg font-bold text-gray-900">{project.title}</h3>
+              <p className="text-sm text-gray-700 mt-1 line-clamp-2">{project.description}</p>
+              <button
+                onClick={() => navigate(`/projects/${project._id}`)}
+                className="mt-3 inline-block bg-[#3a5f50] text-white text-sm px-4 py-2 rounded-full hover:bg-[#2e4c40] transition"
               >
                 Read More →
               </button>
