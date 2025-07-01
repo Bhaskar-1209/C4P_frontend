@@ -1,0 +1,125 @@
+  @import "tailwindcss";
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  @import 'aos/dist/aos.css';
+
+  /* @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap'); */
+
+
+  @layer utilities {
+    @keyframes slideUp {
+      0% {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .animate-slideUp {
+      animation: slideUp 0.8s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .animate-fadeIn {
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+  }
+
+  .login{
+    display: none;
+  }
+
+  /* index.css */
+
+  :root {
+    --font-family-base: 'Nunito', sans-serif;
+    --font-size-base: 16px;
+    --font-size-sm: 14px;
+    --font-size-lg: 18px;
+    --font-weight-normal: 400;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-base);
+    font-weight: var(--font-weight-bold);
+    /* color: #1a1a1a; */
+    margin-top: 0;
+  }
+
+  /* Paragraphs */
+  p {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    color: #444;
+  }
+
+  /* Utility classes if needed */
+  .text-sm {
+    font-size: var(--font-size-sm);
+  }
+  .text-lg {
+    font-size: var(--font-size-lg);
+  }
+  .font-semibold {
+    font-weight: var(--font-weight-semibold);
+  }
+  .font-bold {
+    font-weight: var(--font-weight-bold);
+  }
+
+
+/* src/index.css or src/App.css */
+
+/* h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+p, li {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+span {
+  font-family: 'Great Vibes', cursive;
+} */
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  text-transform:uppercase !important;
+}
+
+/* Paragraphs */
+p, li, span {
+  font-family: 'Source Serif Pro', serif;
+}
+
+/* Navbar and Footer */
+nav, footer, a {
+  font-family: 'Lato', sans-serif;
+}

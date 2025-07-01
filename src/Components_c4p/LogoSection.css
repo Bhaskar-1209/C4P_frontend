@@ -1,0 +1,96 @@
+/* Section background with animated gradient */
+.logo-section-container {
+  background: linear-gradient(135deg, #3a5f50, #ebe6e0, #3a5f50);
+  background-size: 400% 400%;
+  animation: bgAnimate 20s linear infinite;
+  padding: 4rem 1rem;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Section heading */
+.section-heading {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Highlighted text in heading */
+.highlight {
+  color: #facc15; /* Tailwind yellow-400 */
+  font-weight: bold;
+}
+
+/* Marquee wrapper */
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 3rem;
+}
+
+/* Outer marquee container for scrolling animation */
+.marquee-content {
+  display: flex;
+  animation: scrollLeft 30s linear infinite;
+  width: fit-content;
+}
+
+/* Inner track that holds logos */
+.marquee-track {
+  display: flex;
+}
+
+/* Each logo item block */
+.logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 8rem;
+  margin-right: 3rem;
+}
+
+/* Logo image styling - black only */
+.logo-item img {
+  height: 8rem;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0) invert(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Optional hover effect */
+.logo-item img:hover {
+  transform: scale(1.1);
+}
+
+/* Logo label below image */
+.logo-item p {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: black;
+  font-weight: 500;
+}
+
+/* Gradient animation */
+@keyframes bgAnimate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Marquee scroll animation */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
