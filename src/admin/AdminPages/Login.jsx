@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("bhaskar@gmail.com");
   const [password, setPassword] = useState("Ambala@123");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -16,20 +17,24 @@ const Login = () => {
         password,
       });
 
-      // ✅ Save to localStorage
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("role", res.data.role);
-      localStorage.setItem("name", res.data.name);
+      const { token, role, name } = res.data;
 
-      // ✅ Log the values to console
-      console.log("Token:", res.data.token);
-      console.log("Role:", res.data.role);
-      console.log("Name:", res.data.name);
+      // ✅ Log the response
+      console.log("Token:", token);
+      console.log("Role:", role);
+      console.log("Name:", name);
 
-      // ✅ Redirect to admin dashboard
-      navigate("/admin/dashboard");
+      // ✅ Redirect to dashboard and pass user info via state
+      navigate("/admin/dashboard", {
+        state: {
+          token,
+          role,
+          name,
+        },
+      });
     } catch (err) {
-      alert("Login failed: " + (err.response?.data?.message || "Server error"));
+      console.error("Login error:", err);
+      setError(err.response?.data?.message || "Login failed");
     }
   };
 
@@ -40,6 +45,8 @@ const Login = () => {
         className="bg-white p-8 rounded shadow-md w-80 space-y-4"
       >
         <h2 className="text-xl font-bold text-center">Admin Login</h2>
+
+        {error && <p className="text-red-500 text-sm text-center">{error}</p>}
 
         <input
           type="email"
