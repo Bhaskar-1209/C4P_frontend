@@ -17,9 +17,9 @@ const Login = () => {
       });
 
       // ✅ Save to localStorage
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("role", res.data.role);
-      localStorage.setItem("name", res.data.name);
+      // localStorage.setItem("token", res.data.token);
+      // localStorage.setItem("role", res.data.role);
+      // localStorage.setItem("name", res.data.name);
 
       // ✅ Log the values to console
       console.log("Token:", res.data.token);
