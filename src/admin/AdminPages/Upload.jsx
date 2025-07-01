@@ -68,7 +68,7 @@ const UploadProject = () => {
       setUploading(true);
       const token = localStorage.getItem("token");
 
-      const res = await axios.post("http://localhost:5050/api/projects/upload", payload, {
+      const res = await axios.post("https://c4p-backend.onrender.com/api/projects/upload", payload, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json"

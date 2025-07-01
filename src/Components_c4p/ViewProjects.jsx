@@ -9,7 +9,7 @@ const ViewProjects = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await axios.get('http://localhost:5050/api/projects');
+        const res = await axios.get('https://c4p-backend.onrender.com/api/projects');
         setProjects(res.data);
       } catch (error) {
         console.error('Error fetching projects:', error);

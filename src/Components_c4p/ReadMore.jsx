@@ -13,7 +13,7 @@ const ReadMore = () => {
 
     const fetchProject = async () => {
       try {
-        const res = await axios.get(`http://localhost:5050/api/projects/${id}`);
+        const res = await axios.get(`https://c4p-backend.onrender.com/api/projects/${id}`);
         setProject(res.data);
       } catch (error) {
         console.error("Error fetching project details", error);
