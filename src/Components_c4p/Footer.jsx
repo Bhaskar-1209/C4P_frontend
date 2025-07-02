@@ -33,7 +33,6 @@ const Footer = () => {
               <li>↗ Food Support</li>
               <li>↗ Health Support</li>
               <li>↗ Our Campaign</li>
-              {/* <li><Link to="/login" className="hover:text-green-400">↗ Login</Link></li> */}
             </ul>
           </div>
           <div>

@@ -31,7 +31,7 @@ const RecentProjects = () => {
           <h2 className="text-4xl font-bold text-black">Our Recent Projects</h2>
         </div>
         <Link
-          to="/moreProject"
+          to="/more-project"
           className="bg-[#0d6157] hover:bg-[#084c45] text-white px-6 py-2 rounded-full font-medium text-sm transition"
         >
           View All Projects →
