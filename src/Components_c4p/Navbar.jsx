@@ -68,7 +68,7 @@ const Navbar = () => {
         <ul className="hidden lg:flex space-x-8 text-white text-lg items-center">
           <li><Link to="/login" className="hover:text-green-400 login">Login</Link></li>
           <li><Link to="/" className="hover:text-green-400">Home</Link></li>
-          <li><Link to="/aboutus" className="hover:text-green-400">About Us</Link></li>
+          <li><Link to="/about-us" className="hover:text-green-400">About Us</Link></li>
           <li className="relative" ref={desktopDropdownRef}>
             <button
               onClick={() => setDesktopDropdownOpen(!desktopDropdownOpen)}
@@ -85,8 +85,8 @@ const Navbar = () => {
               </ul>
             )}
           </li>
-          <li><Link to="/moreProject" className="hover:text-green-400">Projects</Link></li>
-          <li><Link to="/joinUs" className="hover:text-green-400">Join Us</Link></li>
+          <li><Link to="/more-project" className="hover:text-green-400">Projects</Link></li>
+          <li><Link to="/join-us" className="hover:text-green-400">Join Us</Link></li>
           <li><Link to="/contact" className="hover:text-green-400">Contact Us</Link></li>
         </ul>
 
@@ -114,7 +114,7 @@ const Navbar = () => {
 
         <ul className="mt-10 flex flex-col items-center space-y-6 text-2xl">
           <li><Link to="/" onClick={toggleMenu} className="hover:text-green-400">Home</Link></li>
-          <li><Link to="/aboutus" onClick={toggleMenu} className="hover:text-green-400">About Us</Link></li>
+          <li><Link to="/about-us" onClick={toggleMenu} className="hover:text-green-400">About Us</Link></li>
           <li>
             <button onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)} className="hover:text-green-400">
               Our Initiatives {mobileDropdownOpen ? '▲' : '▼'}
@@ -128,8 +128,8 @@ const Navbar = () => {
               </ul>
             )}
           </li>
-          <li><Link to="/moreProject" onClick={toggleMenu} className="hover:text-green-400">Upcoming Events</Link></li>
-          <li><Link to="/joinUs" onClick={toggleMenu} className="hover:text-green-400">Join Us</Link></li>
+          <li><Link to="/more-project" onClick={toggleMenu} className="hover:text-green-400">Upcoming Events</Link></li>
+          <li><Link to="/join-us" onClick={toggleMenu} className="hover:text-green-400">Join Us</Link></li>
           <li><Link to="/contact" onClick={toggleMenu} className="hover:text-green-400">Contact Us</Link></li>
         </ul>
       </div>

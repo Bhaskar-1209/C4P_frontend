@@ -70,9 +70,9 @@ const App = () => {
             {/* Public Routes */}
             <Route path="/" element={<Care4Poor />} />
             <Route path="/contact" element={<ContactHero />} />
-            <Route path="/moreProject" element={<ViewProjects />} />
-            <Route path="/joinUs" element={<DonatingProcess />} />
-            <Route path="/aboutus" element={<AboutUsNav />} />
+            <Route path="/more-project" element={<ViewProjects />} />
+            <Route path="/join-us" element={<DonatingProcess />} />
+            <Route path="/about-us" element={<AboutUsNav />} />
             <Route path="/projects/:id" element={<ProjectDetails />} />
             <Route path="/upload" element={<UploadProject />} />
           </Route>
