@@ -23,7 +23,6 @@ const AboutUsNav = () => {
 
   return (
     <div className="font-sans text-gray-800">
-      {/* Hero Section */}
       <section data-aos="fade-in" className="relative h-[500px] bg-black text-white flex items-center justify-center">
         <img
           src={bg_3}
@@ -35,7 +34,6 @@ const AboutUsNav = () => {
         </div>
       </section>
 
-      {/* Hope For Every Child Section */}
       <section data-aos="fade-up" className="py-16 px-6 md:px-20 bg-white">
         <h2 className="text-2xl md:text-3xl font-bold text-[#94ae81] uppercase mb-6 text-center">
           Hope For Every Child
@@ -48,7 +46,6 @@ const AboutUsNav = () => {
         </p>
       </section>
 
-      {/* Our Mission */}
       <section className="flex flex-col md:grid md:grid-cols-2">
         <div data-aos="fade-right" className="relative w-full h-64 md:h-96">
           <img src={ourmission} alt="Our Mission" className="w-full h-full object-cover" />
@@ -65,7 +62,6 @@ const AboutUsNav = () => {
         </div>
       </section>
 
-      {/* Our Vision */}
       <section className="flex flex-col-reverse md:grid md:grid-cols-2">
         <div data-aos="fade-right" className="p-6 md:p-10">
           <h2 className="text-2xl font-bold text-[#94ae81] uppercase mb-4">Our Vision</h2>
@@ -79,7 +75,6 @@ const AboutUsNav = () => {
         </div>
       </section>
 
-      {/* Our Values */}
       <section className="flex flex-col md:grid md:grid-cols-2">
         <div data-aos="fade-right" className="relative w-full h-64 md:h-96">
           <img src={ourvalues} alt="Our Values" className="w-full h-full object-cover" />
@@ -100,7 +95,6 @@ const AboutUsNav = () => {
         </div>
       </section>
 
-      {/* What We Do */}
       <section className="flex flex-col-reverse md:grid md:grid-cols-2">
         <div data-aos="fade-right" className="p-6 md:p-10">
           <h2 className="text-2xl font-bold text-[#94ae81] uppercase mb-4">What We Do</h2>

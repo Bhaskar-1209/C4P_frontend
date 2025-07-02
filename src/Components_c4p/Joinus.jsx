@@ -5,7 +5,7 @@ import "aos/dist/aos.css";
 import awarenessIcon from "../assets/logos/aware.svg";
 import donationIcon from "../assets/logos/price.svg";
 import impactIcon from "../assets/logos/impact.svg";
-import bgBanner from "../assets/volunteers/1.png"; // Image inside the circle
+import bgBanner from "../assets/volunteers/1.png"; 
 
 const processSteps = [
   {
@@ -57,7 +57,6 @@ const DonatingProcess = () => {
 
   return (
     <div className="font-sans text-gray-800">
-      {/* Banner Section */}
       <div
         className="relative h-[60vh] bg-cover bg-center flex items-center justify-center"
         style={{ backgroundImage: `url(${bgBanner})` }}
@@ -70,8 +69,6 @@ const DonatingProcess = () => {
           Join Our Mission to Make a Difference
         </h1>
       </div>
-
-      {/* Donating Work Process Section */}
       <section className="bg-white py-20 px-4 md:px-20 text-center">
         <p className="text-[#f4a825] font-semibold text-sm mb-2" data-aos="fade-up">
           Work Process
@@ -114,19 +111,17 @@ const DonatingProcess = () => {
                     cx="256"
                     cy="256"
                     r="256"
-                    fill="rgba(148, 174, 129, 0.35)" // overlay
+                    fill="rgba(148, 174, 129, 0.35)"
                   />
                 </svg>
 
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="relative w-10 h-10 [transform-style:preserve-3d] transition-transform duration-500 group-hover:rotate-y-180">
-                    {/* Front Icon */}
                     <img
                       src={step.icon}
                       alt="icon front"
                       className="absolute w-full h-full backface-hidden"
                     />
-                    {/* Back Icon */}
                     <img
                       src={step.icon}
                       alt="icon back"
@@ -142,14 +137,11 @@ const DonatingProcess = () => {
           ))}
         </div>
       </section>
-
-      {/* Donation Form Section */}
     <section className="bg-gray-100 py-20 px-4 md:px-20">
   <div
     className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
     data-aos="fade-up"
   >
-    {/* Left Side Content */}
     <div>
       <h2 className="text-3xl md:text-4xl font-bold mb-4">
         Make a Difference with Your Support
@@ -164,8 +156,6 @@ const DonatingProcess = () => {
         <li>Track the impact you create</li>
       </ul>
     </div>
-
-    {/* Right Side Form */}
     <form
       onSubmit={(e) => {
         e.preventDefault();

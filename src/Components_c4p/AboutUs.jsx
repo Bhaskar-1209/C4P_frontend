@@ -17,7 +17,6 @@ export default function App() {
     <div className="min-h-screen bg-[#ebe6e0] flex items-center justify-center px-4 py-10">
       <div className="max-w-7xl w-full grid md:grid-cols-2 gap-10 items-center">
 
-        {/* Image Section */}
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -35,7 +34,6 @@ export default function App() {
           <div className="absolute inset-0 rounded-[30px] border-[8px] border-[#3a5f50] z-0"></div>
         </motion.div>
 
-        {/* Content Section */}
         <motion.div
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}

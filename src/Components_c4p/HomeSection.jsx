@@ -30,7 +30,7 @@ const HomeSection = () => {
     };
 
     const timer = setTimeout(() => {
-      setImageLoaded(false); // fade out before image change
+      setImageLoaded(false);
       setCurrentIndex((prev) => (prev + 1) % images.length);
     }, 4000);
 

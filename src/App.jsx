@@ -8,9 +8,6 @@ import {
   Outlet,
 } from "react-router-dom";
 
-// ✅ Lazy-loaded components
-
-// Public pages
 const Navbar = lazy(() => import("./Components_c4p/Navbar"));
 const ContactHero = lazy(() => import("./Components_c4p/ContactUS_bg"));
 const Footer = lazy(() => import("./Components_c4p/Footer"));
@@ -20,8 +17,6 @@ const DonatingProcess = lazy(() => import("./Components_c4p/Joinus"));
 const AboutUsNav = lazy(() => import("./Components_c4p/AboutUsNav"));
 const ProjectDetails = lazy(() => import("./Components_c4p/ReadMore"));
 const UploadProject = lazy(() => import("./admin/AdminPages/Upload"));
-
-// Admin pages & layout
 const AdminLayout = lazy(() => import("./admin/AdminLayouts/AdminLayout"));
 const Dashboard = lazy(() => import("./admin/AdminPages/Dashboard"));
 const Users = lazy(() => import("./admin/AdminPages/Upload"));
@@ -31,7 +26,6 @@ const Login = lazy(() => import("./admin/AdminPages/Login"));
 const UserList = lazy(() => import("./admin/AdminPages/UserList"));
 const ChangePassword = lazy(() => import("./admin/AdminPages/ChangePassword"));
 
-// ✅ Auth check
 const RequireAuth = ({ children }) => {
   const token = sessionStorage.getItem("token");
   const location = useLocation();
@@ -42,8 +36,6 @@ const RequireAuth = ({ children }) => {
 
   return children;
 };
-
-// ✅ Layout for public pages
 const PublicLayout = () => {
   const location = useLocation();
   const isAdminRoute = location.pathname.startsWith("/admin");
@@ -57,7 +49,6 @@ const PublicLayout = () => {
   );
 };
 
-// ✅ Main App
 const App = () => {
   const token = sessionStorage.getItem("token");
 
@@ -65,9 +56,7 @@ const App = () => {
     <Router>
       <Suspense fallback={<div className="p-6 text-white">Loading...</div>}>
         <Routes>
-          {/* Public layout wrapper */}
           <Route element={<PublicLayout />}>
-            {/* Public Routes */}
             <Route path="/" element={<Care4Poor />} />
             <Route path="/contact" element={<ContactHero />} />
             <Route path="/more-project" element={<ViewProjects />} />
@@ -76,11 +65,7 @@ const App = () => {
             <Route path="/projects/:id" element={<ProjectDetails />} />
             <Route path="/upload" element={<UploadProject />} />
           </Route>
-
-          {/* Auth Routes */}
           <Route path="/login" element={<Login />} />
-
-          {/* Show login if token is not available when landing on /admin */}
           <Route
             path="/admin"
             element={
@@ -91,8 +76,6 @@ const App = () => {
               )
             }
           />
-
-          {/* Protected Admin Routes */}
           <Route
             path="/admin/*"
             element={
@@ -108,8 +91,6 @@ const App = () => {
             <Route path="add-user" element={<AddUser />} />
             <Route path="change-password" element={<ChangePassword />} />
           </Route>
-
-          {/* Fallback */}
           <Route path="*" element={<div className="p-6">404 - Not Found</div>} />
         </Routes>
       </Suspense>

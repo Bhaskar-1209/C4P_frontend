@@ -11,7 +11,7 @@ const RecentProjects = () => {
     const fetchLatestProjects = async () => {
       try {
         const res = await axios.get("https://c4p-backend.onrender.com/api/projects");
-        const latestThree = res.data.slice(0, 3); // or use .slice(0, 3)
+        const latestThree = res.data.slice(0, 3); 
         setProjects(latestThree);
       } catch (err) {
         console.error("Error fetching projects:", err);
@@ -25,7 +25,6 @@ const RecentProjects = () => {
 
   return (
     <div className="bg-[#f9f6ef] py-16 px-6 sm:px-10 md:px-20 relative">
-      {/* Header */}
       <div className="flex justify-between items-center mb-10 flex-wrap gap-4">
         <div>
           <p className="text-[#f59e0b] font-semibold mb-1">Complete Projects</p>
@@ -39,7 +38,6 @@ const RecentProjects = () => {
         </Link>
       </div>
 
-      {/* Projects Grid */}
       {loading ? (
         <p className="text-center text-gray-500">Loading projects...</p>
       ) : projects.length === 0 ? (
@@ -51,14 +49,12 @@ const RecentProjects = () => {
               key={index}
               className="relative group overflow-hidden rounded-2xl shadow-lg"
             >
-              {/* Image */}
               <img
                 src={project.images[0]}
                 alt={project.title}
                 className="w-full h-[350px] object-cover transition-all duration-500"
               />
 
-              {/* Desktop Hover Overlay */}
               <div className="absolute top-0 left-0 w-full h-full bg-[#94ae81] text-white p-6 transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out flex-col justify-center hidden md:flex">
                 <h3 className="text-lg font-bold mb-2">{project.title}</h3>
                 <p className="text-sm line-clamp-2">{project.description}</p>
@@ -70,7 +66,6 @@ const RecentProjects = () => {
                 </button>
               </div>
 
-              {/* Mobile Static Description */}
               <div className="md:hidden bg-white p-4">
                 <h3 className="text-lg font-bold text-gray-900">{project.title}</h3>
                 <p className="text-sm text-gray-700 mt-1 line-clamp-2">

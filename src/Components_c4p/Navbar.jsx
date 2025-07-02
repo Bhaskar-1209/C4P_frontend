@@ -48,7 +48,6 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        {/* Logo + Name */}
         <div className="flex items-center space-x-3 text-white font-bold">
           <Link to="/" className="flex items-center space-x-2">
             <img
@@ -64,7 +63,6 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Desktop Nav */}
         <ul className="hidden lg:flex space-x-8 text-white text-lg items-center">
           <li><Link to="/login" className="hover:text-green-400 login">Login</Link></li>
           <li><Link to="/" className="hover:text-green-400">Home</Link></li>
@@ -89,14 +87,10 @@ const Navbar = () => {
           <li><Link to="/join-us" className="hover:text-green-400">Join Us</Link></li>
           <li><Link to="/contact" className="hover:text-green-400">Contact Us</Link></li>
         </ul>
-
-        {/* Mobile Icon Toggle */}
         <div className="lg:hidden text-white text-3xl" onClick={toggleMenu}>
           {menuOpen ? <FaTimes /> : <FaBars />}
         </div>
       </div>
-
-      {/* Mobile Nav */}
       <div
         className={`fixed top-0 left-0 w-full h-screen bg-black text-white z-40 transition-transform duration-300 ease-in-out transform ${
           menuOpen ? 'translate-x-0' : '-translate-x-full'

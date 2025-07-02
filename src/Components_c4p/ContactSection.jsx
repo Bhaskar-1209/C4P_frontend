@@ -20,9 +20,7 @@ const ContactSection = () => {
         className="max-w-7xl mx-auto bg-white rounded-3xl shadow-xl p-6 md:p-10 flex flex-col md:flex-row gap-8"
         data-aos="fade-up"
       >
-        {/* Left Info */}
         <div className="flex-1 space-y-6" data-aos="fade-right">
-          {/* Address */}
           <div className="flex items-start space-x-4">
             <div className="p-4 bg-[#94ae81] rounded-xl text-white text-2xl">
               <FaMapMarkerAlt />
@@ -37,7 +35,6 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* Phone */}
           <div className="flex items-start space-x-4">
             <div className="p-4 bg-[#94ae81] rounded-xl text-white text-2xl">
               <FaPhoneAlt />
@@ -50,7 +47,6 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* Email */}
           <div className="flex items-start space-x-4">
             <div className="p-4 bg-[#94ae81] rounded-xl text-white text-2xl">
               <FaEnvelope />
@@ -63,7 +59,6 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* Questions */}
           <div className="flex items-start space-x-4">
             <div className="p-4 bg-[#94ae81] rounded-xl text-white text-2xl">
               <FaQuestionCircle />
@@ -77,7 +72,6 @@ const ContactSection = () => {
           </div>
         </div>
 
-        {/* Right Map */}
         <div className="flex-1" data-aos="fade-left">
           <img
             title="Map Location"

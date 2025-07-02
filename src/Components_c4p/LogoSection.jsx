@@ -8,10 +8,6 @@ import logo_5 from '../assets/logos/5.png'
 import logo_6 from '../assets/logos/6.png'
 
 const logos = [
-  // {
-  //   name: 'CARE4POOR',
-  //   img: logo_1,
-  // },
   {
     name: 'THE CHANGEMAKERS LEAGUE',
     img: logo_2,
@@ -35,7 +31,6 @@ const logos = [
 ];
 
 const LogoSection = () => {
-  // Duplicate logos twice for a smooth seamless scroll
   const loopedLogos = [...logos, ...logos, ...logos];
 
   return (

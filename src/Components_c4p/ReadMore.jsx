@@ -31,7 +31,6 @@ const ReadMore = () => {
 
   return (
     <div className="font-sans text-gray-800">
-      {/* Hero Section */}
       <section
         data-aos="fade-in"
         className="relative h-[500px] bg-black text-white flex items-center justify-center"
@@ -51,7 +50,6 @@ const ReadMore = () => {
         </div>
       </section>
 
-      {/* Description Section */}
       <section data-aos="fade-up" className="py-16 w-full bg-white px-6 md:px-20">
         <h2 className="text-2xl md:text-3xl font-bold text-[#94ae81] uppercase mb-6 text-left">
           Project Impact
@@ -74,7 +72,6 @@ const ReadMore = () => {
         )}
       </section>
 
-      {/* Contributors Section */}
       <section className="flex flex-col md:grid md:grid-cols-2">
         <div data-aos="fade-right" className="relative w-full h-64 md:h-96">
           <img

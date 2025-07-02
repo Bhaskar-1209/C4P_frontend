@@ -62,7 +62,6 @@ const ContactForm = () => {
     <div className="bg-[#ebe6e0] py-16 px-4">
       <ToastContainer />
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
-        {/* Left image */}
         <div className="w-full md:w-1/2 relative" data-aos="fade-right">
           <img
             src={formImage}
@@ -73,7 +72,6 @@ const ContactForm = () => {
           <div className="absolute bottom-0 right-0 w-40 h-40 bg-[#f59e0b] rounded-full blur-3xl opacity-30 -z-10"></div>
         </div>
 
-        {/* Right form */}
         <div
           className="w-full md:w-1/2 bg-white rounded-3xl border border-gray-200 p-8 shadow"
           data-aos="fade-left"

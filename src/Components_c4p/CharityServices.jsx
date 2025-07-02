@@ -1,6 +1,6 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
-import AnimatedBackground from "./AnimatedBackground"; // ✅ import
+import AnimatedBackground from "./AnimatedBackground";
 
 const services = [
   {
@@ -23,7 +23,6 @@ const services = [
 const CharityServices = () => {
   return (
     <section className="relative overflow-hidden py-20 px-4 text-center bg-[#ebe6e0]">
-      {/* ✅ Include the animated background */}
       <AnimatedBackground />
 
       <div className="relative z-10 animate-fadeIn">
