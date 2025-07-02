@@ -1,10 +1,9 @@
-// components/ProtectedRoute.js
+// src/components/ProtectedRoute.jsx
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 
 const ProtectedRoute = () => {
-  const token = localStorage.getItem("token");
+  const token = sessionStorage.getItem("token");
   const location = useLocation();
-
   return token ? <Outlet /> : <Navigate to="/login" state={{ from: location }} replace />;
 };
 

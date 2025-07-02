@@ -15,7 +15,7 @@ import ProtectedRoute from "./AdminComponents/ProtectedRoute";
 import UserList from "./AdminPages/UserList";
 
 const RequireAuth = ({ children }) => {
-  const token = localStorage.getItem("token");
+  const token = sessionStorage.getItem("token");
   const location = useLocation();
 
   if (!token) {
@@ -36,7 +36,7 @@ const App = () => {
         <Route
           path="/admin"
           element={
-            localStorage.getItem("token") ? (
+            sessionStorage.getItem("token") ? (
               <Navigate to="/admin/dashboard" />
             ) : (
               <Navigate to="/login" />

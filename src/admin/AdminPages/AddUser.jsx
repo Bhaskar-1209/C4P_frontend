@@ -46,7 +46,7 @@ const AddUser = () => {
 
     try {
       const res = await axios.post("https://c4p-backend.onrender.com/api/users/register", form);
-      localStorage.setItem("role", res.data.role);
+      sessionStorage.setItem("role", res.data.role);
       toast.success("User registered successfully!");
       setForm({
         name: "",

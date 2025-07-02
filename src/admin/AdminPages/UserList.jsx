@@ -31,7 +31,7 @@ const UserList = () => {
     try {
       await axios.delete(`https://c4p-backend.onrender.com/api/users/${userId}`, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`, // assuming token is stored in localStorage
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`, // assuming token is stored in sessionStorage
         },
       });
       fetchUsers();

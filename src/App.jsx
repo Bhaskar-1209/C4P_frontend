@@ -28,7 +28,7 @@ import UserList from "./admin/AdminPages/UserList";
 import ChangePassword from "./admin/AdminPages/ChangePassword";
 
 const RequireAuth = ({ children }) => {
-  const token = localStorage.getItem("token");
+  const token = sessionStorage.getItem("token"); // ✅ FIXED
   const location = useLocation();
 
   if (!token) {
@@ -38,7 +38,6 @@ const RequireAuth = ({ children }) => {
   return children;
 };
 
-// Layout wrapper to hide Navbar/Footer on /admin routes
 const PublicLayout = () => {
   const location = useLocation();
   const isAdminRoute = location.pathname.startsWith("/admin");
@@ -53,7 +52,7 @@ const PublicLayout = () => {
 };
 
 const App = () => {
-  const token = localStorage.getItem("token");
+  const token = sessionStorage.getItem("token"); // ✅ FIXED
 
   return (
     <Router>
@@ -100,7 +99,6 @@ const App = () => {
           <Route path="user-list" element={<UserList />} />
           <Route path="add-user" element={<AddUser />} />
           <Route path="change-password" element={<ChangePassword />} />
-
         </Route>
 
         {/* Fallback */}

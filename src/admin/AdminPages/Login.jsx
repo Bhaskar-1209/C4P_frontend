@@ -16,18 +16,14 @@ const Login = () => {
         password,
       });
 
-      // ✅ Save to localStorage
-      // localStorage.setItem("token", res.data.token);
-      // localStorage.setItem("role", res.data.role);
-      // localStorage.setItem("name", res.data.name);
+      // ✅ Save to sessionStorage
+      sessionStorage.setItem("token", res.data.token);
+      sessionStorage.setItem("role", res.data.role);
+      sessionStorage.setItem("name", res.data.name);
 
       // ✅ Log the values to console
-      console.log("Token:", res.data.token);
-      console.log("Role:", res.data.role);
-      console.log("Name:", res.data.name);
-
       // ✅ Redirect to admin dashboard
-      navigate("/admin/dashboard");
+      navigate("/admin/upload");
     } catch (err) {
       alert("Login failed: " + (err.response?.data?.message || "Server error"));
     }

@@ -15,11 +15,11 @@ import { useState } from "react";
 
 const Sidebar = () => {
   const navigate = useNavigate();
-  const role = localStorage.getItem("role");
+  const role = sessionStorage.getItem("role");
   const [open, setOpen] = useState(false);
 
   const handleLogout = () => {
-    localStorage.clear();
+    sessionStorage.clear();
     navigate("/login");
   };
 
@@ -34,11 +34,11 @@ const Sidebar = () => {
 
   // Define nav items
   const commonLinks = [
-    {
-      to: "/admin/dashboard",
-      name: "Dashboard",
-      icon: <FaTachometerAlt className="mr-2" />,
-    },
+    // {
+    //   to: "/admin/dashboard",
+    //   name: "Dashboard",
+    //   icon: <FaTachometerAlt className="mr-2" />,
+    // },
     {
       to: "/admin/upload",
       name: "Upload",

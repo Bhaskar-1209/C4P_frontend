@@ -46,7 +46,7 @@ const ChangePassword = () => {
     }
 
     try {
-      const token = localStorage.getItem("token");
+      const token = sessionStorage.getItem("token");
       const res = await axios.put(
         "https://c4p-backend.onrender.com/api/users/change-password",
         { currentPassword, newPassword },

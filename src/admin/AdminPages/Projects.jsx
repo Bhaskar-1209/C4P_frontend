@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { FaEllipsisV, FaTrash } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa";
 import { toast } from "react-toastify";
 
 const OngoingProjects = () => {
@@ -16,6 +16,7 @@ const OngoingProjects = () => {
       setProjects(res.data);
     } catch (err) {
       console.error("Failed to fetch projects", err);
+      toast.error("Failed to load projects");
     }
   };
 
@@ -26,10 +27,9 @@ const OngoingProjects = () => {
     try {
       await axios.delete(`https://c4p-backend.onrender.com/api/projects/${id}`, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`, // Add your token here
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`,
         },
       });
-
       toast.success("Project deleted successfully");
       setProjects((prev) => prev.filter((p) => p._id !== id));
     } catch (err) {
@@ -52,7 +52,7 @@ const OngoingProjects = () => {
             <tr>
               <th className="p-2">Project</th>
               <th className="p-2">Date</th>
-              <th className="p-2">Uploader</th>
+              <th className="p-2">Uploaded By</th>
               <th className="p-2">Contributors</th>
               <th className="p-2">Actions</th>
             </tr>
@@ -65,13 +65,15 @@ const OngoingProjects = () => {
                 <td className="p-2">
                   <div className="flex items-center gap-2">
                     <img
-                      src={`https://ui-avatars.com/api/?name=${encodeURIComponent(p.uploader?.name || "User")}`}
+                      src={`https://ui-avatars.com/api/?name=${encodeURIComponent(
+                        p.uploader?.name || "User"
+                      )}&background=random`}
                       alt="avatar"
                       className="rounded-full w-6 h-6"
                     />
                     <div>
                       <p className="font-medium">{p.uploader?.name || "Unknown"}</p>
-                      <p className="text-xs">{p.uploader?.email}</p>
+                      <p className="text-xs text-gray-400">{p.uploader?.email}</p>
                     </div>
                   </div>
                 </td>
@@ -80,7 +82,7 @@ const OngoingProjects = () => {
                     ? p.contributors.join(", ")
                     : "No contributors"}
                 </td>
-                <td className="p-2 space-x-2">
+                <td className="p-2">
                   <button
                     className="text-red-500 hover:text-red-700"
                     onClick={() => handleDelete(p._id)}
@@ -123,13 +125,15 @@ const OngoingProjects = () => {
             </p>
             <div className="flex items-center gap-3 my-2">
               <img
-                src={`https://ui-avatars.com/api/?name=${encodeURIComponent(p.uploader?.name || "User")}`}
+                src={`https://ui-avatars.com/api/?name=${encodeURIComponent(
+                  p.uploader?.name || "User"
+                )}&background=random`}
                 alt="avatar"
                 className="rounded-full w-8 h-8"
               />
               <div>
                 <p className="font-medium">{p.uploader?.name || "Unknown"}</p>
-                <p className="text-xs">{p.uploader?.email}</p>
+                <p className="text-xs text-gray-400">{p.uploader?.email}</p>
               </div>
             </div>
             <p className="text-sm mb-1">
